@@ -1,35 +1,28 @@
 package model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Produto {
-    private String nomeDoTitulo;
+    private String nome;
     private String rentabilidadeAnual;
     private Double investimentoMinimo;
     private Double precoUnitario;
     private Date vencimento;
 
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-    public Produto(){};
-
-    public Produto(String nomeDoTitulo, String rentabilidadeAnual, Double investimentoMinimo, Double precoUnitario, Date vencimento) {
-        this.nomeDoTitulo = nomeDoTitulo;
+    public Produto(String nome, String rentabilidadeAnual, Double investimentoMinimo, Double precoUnitario, Date vencimento) {
+        this.nome = nome;
         this.rentabilidadeAnual = rentabilidadeAnual;
         this.investimentoMinimo = investimentoMinimo;
         this.precoUnitario = precoUnitario;
         this.vencimento = vencimento;
     }
 
-    public String getNomeDoTitulo(String dadosNomeTitulo) {
-
-
-        return nomeDoTitulo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeDoTitulo(String nomeDoTitulo) {
-        this.nomeDoTitulo = nomeDoTitulo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getRentabilidadeAnual() {
@@ -40,12 +33,12 @@ public class Produto {
         this.rentabilidadeAnual = rentabilidadeAnual;
     }
 
-    public Double getInvestimentoMinimo() {
-        return investimentoMinimo;
+    public Date getVencimento() {
+        return vencimento;
     }
 
-    public void setInvestimentoMinimo(Double investimentoMinimo) {
-        this.investimentoMinimo = investimentoMinimo;
+    public void setVencimento(Date vencimento) {
+        this.vencimento = vencimento;
     }
 
     public Double getPrecoUnitario() {
@@ -56,22 +49,22 @@ public class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public Date getVencimento() {
-        return vencimento;
+    public Double getInvestimentoMinimo() {
+        return investimentoMinimo;
     }
 
-    public void setVencimento(Date vencimento) {
-        this.vencimento = vencimento;
+    public void setInvestimentoMinimo(Double investimentoMinimo) {
+        this.investimentoMinimo = investimentoMinimo;
     }
 
     @Override
     public String toString() {
         return "Produto{" +
-                "nomeDoTitulo='" + nomeDoTitulo + '\'' +
+                "nome='" + nome + '\'' +
                 ", rentabilidadeAnual='" + rentabilidadeAnual + '\'' +
                 ", investimentoMinimo=" + investimentoMinimo +
                 ", precoUnitario=" + precoUnitario +
-                ", vencimento=" + sdf.format(vencimento) +
+                ", vencimento=" + vencimento +
                 '}';
     }
 }
